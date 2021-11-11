@@ -8,8 +8,8 @@
 {
     let book = {
         name: '1984',
-        page: 'роман',
-        genre: 330,
+        page: 380,
+        genre: 'роман',
 
 
     }
@@ -19,15 +19,15 @@
 {
     let book = {
         name: 'Война и мир',
-        page: 'роман',
-        genre: 280,
+        page: 280,
+        genre: 'роман',
         author: 'Лев Толстой',
     }
 }
 // 3. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр, автори
 let books = [
-    {name: 'Одиссея', page: 'поезія', genre: 480, author: 'Гомер',},
-    {name: 'Ромео і Джульєтта', page: 'Трагедія', genre: 180, author: 'Уильям Шекспір'}
+    {name: 'Одиссея', page: 380, genre: 'поезія', author: 'Гомер',},
+    {name: 'Ромео і Джульєтта', page: 180, genre: 'Трагедія', author: 'Уильям Шекспір'}
 ]
 console.log(books[0]);
 console.log(books[1]);
@@ -45,7 +45,7 @@ console.log(books[1]);
     let heightC = 10;
     let dc = 4;
     let pi = 3.14;
-    let v = pi * (dc * dc) * heightC;
+    let v = pi * dc**2 * heightC;
     console.log(v);
 }
 // 7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).

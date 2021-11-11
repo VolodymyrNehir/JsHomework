@@ -146,15 +146,15 @@
 // lastName = prompt('як тебе звати?')
 // console.log(`вітаю ${lastName} ${firstName} тобі ${age} років`);
 // --------- 5
-{
-let a = 100;
-let b = '100';
-let c = true;
-
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof c);
-};
+// {
+// let a = 100;
+// let b = '100';
+// let c = true;
+//
+// console.log(typeof a);
+// console.log(typeof b);
+// console.log(typeof c);
+// };
 // ----------- 6
 // 5 < 6 -> true
 // 5 => 6 -> false
