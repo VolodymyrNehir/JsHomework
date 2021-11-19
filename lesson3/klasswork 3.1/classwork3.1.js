@@ -52,10 +52,10 @@ let simpsons = [
 ];
 
 for (i of simpsons){
-        document.write(`<div><h2>${i['name']} ${i['surname']} age is ${i['age']}</h2> <p>${i['info']}</p> <img src="${i['photo']}" alt=""></div>`)
+        document.write(`<div><h2>${i['name']} ${i['surname']} age is ${i['age']}</h2> <p>${i['info']}</p> <img src="${i['photo']}" alt="simpson"></div>`)
 }
 for (i of simpsons){
-    document.write(`<div>NAME-${i['name']} SURNAME-${i['surname']} AGE-${i['age']} INFO-${i['info']} <img src="${i['photo']}" alt=""></div>`)
+    document.write(`<div>NAME-${i['name']} SURNAME-${i['surname']} AGE-${i['age']} INFO-${i['info']} <img src="${i['photo']}" alt="simpson"></div>`)
 }
 /*
 			Використовуючи данні з масиву, за допомоги document.write та циклу
@@ -87,7 +87,7 @@ let products = [
 document.write(`<div class="product">`);
 
 for (a of products){
-        document.write(`<div class="product-card"> <h3>${a["title"]} price-${a["price"]}</h3> <img src="${a['image']}" alt=""/></div>`);
+        document.write(`<div class="product-card"> <h3>${a["title"]} price-${a["price"]}</h3> <img src="${a['image']}" alt="product"/></div>`);
 
 }
         document.write(`</div`);
