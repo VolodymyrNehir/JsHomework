@@ -58,10 +58,10 @@ users = [
         {id:3,name:'oleg',age:30},
 
     ];
-// function user (){
+// function user (us){
 // for (let ids of users){
 //
 //     document.write(`<div> ${ids['id']} ${ids['name']} ${ids['age']}</div>`);
 // }
 // }
-// user()
+// user(users)
