@@ -35,8 +35,7 @@
 //   }
 //   object(obj);
 //   - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
-// EXAMPLE:
-//     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
+
 // let objects =  [{name: 'Dima'}, {age: 13}, {model: 'Camry'}]
 //
 // let key = [];
