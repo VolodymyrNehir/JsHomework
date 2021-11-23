@@ -36,17 +36,17 @@
 //   object(obj);
 //   - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
 
-// let objects =  [{name: 'Dima'}, {age: 13}, {model: 'Camry'}]
-//
-// let key = [];
-// let ie = [];
-// function objectb(o) {
-//     for (let i = 0; i < objects.length; i++){
-//         ie = objects[i];
-//         for (let a in ie){
-//            key[i] = ie[a];
-//         }
-//         }console.log(key)
-//
-// }
-// objectb(objects)
+let objects =  [{name: 'Dima'}, {age: 13}, {model: 'Camry'}]
+
+let key = [];
+let ie = [];
+function objectb(o) {
+    for (let i = 0; i < objects.length; i++){
+        ie = objects[i];
+        for (let a in ie){
+           key[i] = ie[a];
+        }
+        }return  key;
+
+}
+console.log(objectb(objects))
