@@ -43,3 +43,5 @@ let number = [31, 24, 42, 242, 85,5, 377, 8, 22, 11];
 // let m = [];
 // let newm = (n) => {for (let i = n.length -1, a = 0; i >= 0; i--, a++){m[a]= n[i];}console.log(m);return m;};
 // newm(newmas);
+
+// end
