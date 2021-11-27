@@ -59,5 +59,5 @@
     ];
     // -- відсортувати його за спаданням за monthDuration
     // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-    // console.log(coursesAndDurationArray.sort((a,b)=>a.monthDuration-b.monthDuration))
-    // console.log(coursesAndDurationArray.filter((value => value.monthDuration > 5)))
+    // console.log(coursesAndDurationArray.sort((a,b)=>a.monthDuration-b.monthDuration));
+    // console.log(coursesAndDurationArray.filter((value => value.monthDuration > 5)));
