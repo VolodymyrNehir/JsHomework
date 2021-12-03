@@ -53,6 +53,6 @@
 // for (let i of document.getElementsByTagName('p')){
 // i.style.padding = '20px'}
 // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year. Пример sep-2021)
-// for (let i of document.getElementsByClassName('text2')){
-//  i.innerText = 'sep-2021'
-// }
+for (let i of document.getElementsByClassName('text2')){
+ i.innerText = 'sep-2021'
+}
