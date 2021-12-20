@@ -6,6 +6,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts`)
 .then(reason => reason.json())
 .then(posts =>{
     for (let post of posts) {
+        let divElementComment = document.createElement('div');
         let divElementPosts = document.createElement('div');
         let elementH2 = document.createElement('h2');
         let elementP = document.createElement('p');
@@ -17,18 +18,17 @@ fetch(`https://jsonplaceholder.typicode.com/posts`)
         divElementPosts.appendChild(elementH2);
         divElementPosts.appendChild(elementP)
         divElementPosts.appendChild(buttonElement);
+        divElementPosts.append(divElementComment);
 
         buttonElement.onclick = () => {
             fetch(`https://jsonplaceholder.typicode.com/comments`)
                 .then(responce => responce.json())
                 .then(comments => {
-                    comments = comments.filter(comments=>comments.id === post.id);
+                    comments = comments.filter(comments=>comments.postId === post.id);
                     buttonElement.innerText='hide comment'
                     for (let comment  of comments) {
                         console.log(comment)
                         let divElement = document.createElement("div");
-                        divElement.classList=' divComments'
-                        let divComments = document.getElementsByClassName('divComments');
                         let h6Element = document.createElement('h6');
                         let h3Element = document.createElement('h3');
                         let pElement = document.createElement('p');
@@ -45,23 +45,21 @@ fetch(`https://jsonplaceholder.typicode.com/posts`)
                         h4Element.innerText = 'email' + ': ' + comment.email
                         pElement.innerText = 'body' + ': ' + comment.body
                         h5Element.innerText = 'postId' + ': ' + comment.postId
+                        divElementComment.appendChild(divElement);
 
-                        divElementPosts.appendChild(divElement);
+                        }
                     buttonElement.onclick=()=> {
-                        if (divElement.style.display !== 'none') {
-                            divElement.style.display = 'none'
+                        if (divElementComment.style.display !== 'none') {
+                            divElementComment.style.display = 'none'
                             buttonElement.innerText = 'show comment'
 
                         } else {
-                            divElement.style.display = 'block'
+                            divElementComment.style.display = 'block'
                             buttonElement.innerText = 'hide comment'
                         }
                     }
-
-                        }
-
                 })
-        }
+           }
 
     }
 });
