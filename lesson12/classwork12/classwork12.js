@@ -19,6 +19,11 @@ fetch(`https://jsonplaceholder.typicode.com/posts`)
         divElementPosts.appendChild(elementP)
         divElementPosts.appendChild(buttonElement);
         divElementPosts.append(divElementComment);
+        divElementPosts.style.background='Turquoise'
+        divElementPosts.style.border='10px solid Aquamarine'
+        divElementComment.style.background='Aquamarine'
+        divElementComment.style.border='5px solid Turquoise'
+
 
         buttonElement.onclick = () => {
             fetch(`https://jsonplaceholder.typicode.com/comments`)
