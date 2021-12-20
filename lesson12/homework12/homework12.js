@@ -35,7 +35,6 @@
 fetch(`https://jsonplaceholder.typicode.com/comments`)
     .then(responce=>responce.json())
     .then(value => {
-        console.log(value[1])
         for (const i of value){
             let divElement = document.createElement("div");
             document.body.appendChild(divElement);
