@@ -10,10 +10,13 @@ function wokeUp(){
         )
     })
 };
-function breakfast(){
+function breakfast(haveBreakfast){
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
-            resolve ('have breakfast');
+            if (haveBreakfast)
+            {resolve ('cook'+' '+ haveBreakfast)}
+            reject ('i am have eat')
+            ;
         },1000)
     })
 };
@@ -76,7 +79,7 @@ function studying(){
 wokeUp()
     .then(resolve=>{
         console.log(resolve)
-        return breakfast()
+        return breakfast('buckwheat')
     })
     .then(resolve=>{
         console.log(resolve)
@@ -113,3 +116,36 @@ wokeUp()
     .then(resolve=>{
         console.log(resolve);
     })
+.catch(e=>{
+    console.error(e)
+});
+// async function routine(){
+//     const wokeup = await wokeUp();
+//     console.log(wokeup);
+//
+//     const eat = await breakfast('buckwheat');
+//     console.log(eat);
+//
+//     const sho = await shower();
+//     console.log(sho);
+//
+//     const newDressed = await dressed();
+//     console.log(newDressed);
+//
+//     const newWork = await work();
+//     console.log(newWork);
+//
+//     const newComeHome = await comeHome();
+//     console.log(newComeHome);
+//
+//     const newSupper = await supper();
+//     console.log(newSupper);
+//
+//     const newStudying = await studying();
+//     console.log(newStudying);
+//
+//     const newSleep = await sleep();
+//     console.log(newSleep);
+//
+// }
+// routine();
