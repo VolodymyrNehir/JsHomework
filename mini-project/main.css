@@ -1,0 +1,56 @@
+/*Стилизация проекта - -->*/
+/*<!--index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.-->*/
+/*<!--user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.-->*/
+/*<!--блоки с краткой информацией про post - в ряд по 5 объектов.-->*/
+/*<!--post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.-->*/
+/*<!--Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)*/
+body{
+    background-image: url("https://st3.depositphotos.com/2128411/17996/i/600/depositphotos_179969458-stock-photo-soft-minimaliste-landscape-of-snow.jpg") ;
+    background-size: cover;
+}
+.wrap{
+    width: 900px;
+    margin: auto;
+}
+.indexWrap{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+.indexUsers{
+    display: flex;
+    width: 45%;
+flex-direction: column;
+    border: 2px solid silver;
+    text-align: center;
+
+}
+.userDetailsWrap{
+    text-align: center;
+}
+.userDetailsWrap button{
+    width: 90%;
+    margin: 0;
+}
+.wrapPosts{
+    display: flex;
+    flex-wrap: wrap;
+}
+.wrapPosts p{
+    width: 18%;
+    right: 200px;
+display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid silver;
+    text-align: center;
+
+}
+
+.wrapTagP{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
