@@ -30,6 +30,9 @@ flex-direction: column;
 .userDetailsWrap{
     text-align: center;
 }
+.userDetailsWrap p{
+    border: 2px solid silver;
+margin: auto 30% auto 30% }
 .userDetailsWrap button{
     width: 90%;
     margin: 0;
@@ -53,4 +56,27 @@ display: flex;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
+}
+.postTagdiv{
+    border: 5px solid silver;
+    text-align: center;
+
+}
+.commentsDivBlock{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.commentsDivBlocks{
+    border: 3px solid silver;
+    width: 24%;
+}
+.commentsDivBlocks p{
+    margin-left: 16px;
+}
+.divElement{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
 }

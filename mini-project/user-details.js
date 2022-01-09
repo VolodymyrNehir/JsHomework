@@ -24,6 +24,7 @@ for (let item of details) {
     document.body.appendChild(userDetailsWrap);
     userDetailsWrap.appendChild(divElement)
     postOfCurrentUser.onclick = function () {
+        postOfCurrentUser.style.display='none'
 fetch(`https://jsonplaceholder.typicode.com/users/${item.id}/posts`)
     .then(result=>result.json())
     .then(posts=>{
