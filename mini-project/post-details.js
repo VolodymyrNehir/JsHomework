@@ -1,9 +1,14 @@
 // На странице post-details.html:
 // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
-const postId = JSON.parse(localStorage.getItem('key3'));
-console.log(postId)
-const divElement = document.createElement('div');
+const querySearch = window.location.search;
+const urlSearchParams = new URLSearchParams(querySearch);
+const post_Id = Number(urlSearchParams.get('id'));
+fetch(`https://jsonplaceholder.typicode.com/posts/${post_Id}`)
+    .then(result=>result.json())
+    .then(postId=>{
+
+        const divElement = document.createElement('div');
 document.body.appendChild(divElement)
 divElement.classList.add('divElement')
         const postTagdiv = document.createElement('div');
@@ -28,7 +33,6 @@ const comments = document.createElement('button');
                 .then(result => result.json())
                 .then(comments => {
                     for (let i of comments) {
-                        console.log(i)
                         const commentsDivBlocks = document.createElement('div');
                         commentsDivBlocks.classList.add('commentsDivBlocks')
                         commentsDivBlocks.innerHTML = `
@@ -44,3 +48,4 @@ const comments = document.createElement('button');
                     }
                 })
         }
+})

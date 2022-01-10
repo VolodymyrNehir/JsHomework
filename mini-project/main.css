@@ -8,6 +8,10 @@ body{
     background-image: url("https://st3.depositphotos.com/2128411/17996/i/600/depositphotos_179969458-stock-photo-soft-minimaliste-landscape-of-snow.jpg") ;
     background-size: cover;
 }
+p{
+    word-wrap: break-word;
+
+}
 .wrap{
     width: 900px;
     margin: auto;

@@ -4,7 +4,6 @@
 fetch(`https://jsonplaceholder.typicode.com/users`)
 .then(result=> result.json())
 .then(users=>{
-    console.log(users)
     const indexWrap = document.createElement('div');
     indexWrap.classList.add('indexWrap','wrap');
     for (const i of users) {
@@ -20,26 +19,8 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
         indexWrap.appendChild(divElement);
         document.body.appendChild(indexWrap)
         buttonUserDetails.onclick= function (){
-open(`user-details.html?id`, '_self')
-            let details = [{
-                id: i.id,
-                name: i.name,
-                username: i.username,
-                email: i.email,
-                street: i.address.street,
-                suite: i.address.suite,
-                city: i.address.city,
-                zipcode: i.address.zipcode,
-                lat: i.address.geo.lat,
-                lag: i.address.geo.lag,
-                phone: i.phone,
-                website: i.website,
-                companyName: i.company.name,
-                companyCatchPhrase: i.company.catchPhrase,
-                companyBs: i.company.bs,
-            }]
-            console.log(details)
-            localStorage.setItem('key1',JSON.stringify(details))
+open(`user-details.html?id=${i.id}`, '_self')
+
         }
     }
 

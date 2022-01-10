@@ -4,11 +4,39 @@
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
 //     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html, которая имеет детальную информацию про текущий пост.
 
-const details = JSON.parse(localStorage.getItem('key1'));
 const userDetailsWrap = document.createElement('div');
-// userDetailsWrap.classList.add('userDetailsWrap')
+userDetailsWrap.classList.add('userDetailsWrap')
+const querySearch = window.location.search;
+const urlParams = new URLSearchParams(querySearch);
+const userId = Number(urlParams.get('id'));
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(usersList => {
+        const user = usersList[userId-1 ];
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            .then(response => response.json())
+            .then(userInfo=>{
+                let details = [{
+                        id: userInfo.id,
+                        name: userInfo.name,
+                        username: userInfo.username,
+                        email: userInfo.email,
+                        street: userInfo.address.street,
+                        suite: userInfo.address.suite,
+                        city: userInfo.address.city,
+                        zipcode: userInfo.address.zipcode,
+                        lat: userInfo.address.geo.lat,
+                        lag: userInfo.address.geo.lag,
+                        phone: userInfo.phone,
+                        website: userInfo.website,
+                        companyName: userInfo.company.name,
+                        companyCatchPhrase: userInfo.company.catchPhrase,
+                        companyBs: userInfo.company.bs,
+                    }]
+
+
 for (let item of details) {
-    console.log(item)
     const divElement = document.createElement('div');
     divElement.classList.add('userDetailsWrap')
 
@@ -16,7 +44,6 @@ for (let item of details) {
         const infiUser = document.createElement('p');
         infiUser.innerText = i + ` - ` + item[i]
         divElement.appendChild(infiUser);
-        console.log(i)
     }
     const postOfCurrentUser = document.createElement('button');
     postOfCurrentUser.innerText= 'post of current user'
@@ -33,7 +60,6 @@ fetch(`https://jsonplaceholder.typicode.com/users/${item.id}/posts`)
         wrapTagP.classList.add('wrapTagP')
         divPosts.classList.add('wrapPosts')
         for (let itemPosts of posts){
-            console.log(itemPosts.title)
             const tagPposts = document.createElement('p');
             const postDetailsButton = document.createElement('button');
             postDetailsButton.innerText='post details';
@@ -43,18 +69,21 @@ fetch(`https://jsonplaceholder.typicode.com/users/${item.id}/posts`)
             tagPposts.appendChild(postDetailsButton)
 
             postDetailsButton.onclick=function (){
-                open(`post-details.html`,'_self');
-                localStorage.setItem('key3',JSON.stringify(itemPosts))
-                console.log(itemPosts)
+                open(`post-details.html?id=${itemPosts.id}`,'_self');
 
             }
 
         };
 
         document.body.appendChild(divPosts);
-        // localStorage.setItem('key3',JSON.stringify(item.id))
 
-        // console.log(itemPosts.id)
     })
+
     }
+
 }
+    })
+    })
+
+
+
